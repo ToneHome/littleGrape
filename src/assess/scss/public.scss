@@ -1,0 +1,9 @@
+@import "./defindeVar.scss";
+body{
+  background-image: url(./../images/bg.png);
+}
+.page-content{
+  min-height: $content-min-height;
+  overflow-y: auto;
+  margin: 0 auto;
+}

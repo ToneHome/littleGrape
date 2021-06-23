@@ -1,0 +1,1 @@
+#### 一个使用vite2 搭建的react 项目基础模板 包括 eslint prettier redux router 

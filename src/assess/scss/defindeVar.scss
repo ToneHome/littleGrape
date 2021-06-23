@@ -1,0 +1,27 @@
+$content-max-width:1200px;
+// 全局尺寸配置
+$all-top-title-hegiht:70px;
+$footer-height:88px;
+$content-min-height:calc(100vh - #{$all-top-title-hegiht} - #{$footer-height});
+$look-panel-width:320px;
+// 全局颜色配置
+$main-color:#F9BA48;
+$main-font-color:#7B7B7B;
+$cross-font-color:#4A4A4A;
+$big-background-color:#F7F7F7;
+$content-bg:white;
+$content-raduis:4px;
+
+// 全局边距配置
+$left-right-padding:20px;
+$top-bottom-margi:20px;
+$top-margin:20px;
+$left-margin:20px;
+$bottom-margin:60px;
+$small-box-margin:15px;
+$big-box-padding:20px;
+$all-font-color:#7B7B7B;
+// footer
+$footer-font-size:14px;
+$footer-font-color:#9B9B9B;
+$footer-background-color:#323639;

@@ -1,0 +1,12 @@
+@import "./defindeVar.scss";
+.page-pagination{
+  padding-top:20px;
+  display: flex;
+  justify-content: flex-end;
+}
+.page-content{
+  min-height: $content-min-height;
+  max-width: $content-max-width;
+  margin: 0 auto;
+}
+
