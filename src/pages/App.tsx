@@ -8,46 +8,34 @@
  */
 import React, { ChangeEvent } from 'react';
 import { connect } from 'react-redux';
-import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
-import './App.css';
+import {  BrowserRouter as Router, Route } from 'react-router-dom';
 import routes from '@/router/router';
+import AppHeader from '../components/appHeader/index'
+import { registerScroll } from '@/hook/scroll'
 
 class App extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
   }
+  componentDidMount() {
+    registerScroll()
+  }
   render() {
     return (<div className="App">
-      <header className="App-header">
-        <h1>测试页面</h1>
         <Router>
-          <div>
-            <Link to="/read">读取</Link>
-            <Link to="/write">编写</Link>
-            <div>
-              <input
-                onChange={this.props.inputChange}
-                type="text"
-              />
-            </div>
-            <div>change_input======&gt;{this.props.inputValue}</div>
-            <div>
-              <input
-                onChange={this.props.countChange}
-                type="text"
-              />
-            </div>
-            <div>change_count======&gt;{this.props.count}</div>
-          </div>
-          <div>
-            {routes.map((item, index) => (
-              <Route
-                key={`sdfasdf ${index}`}
-                {...item}
-              />))}
+          <AppHeader />
+          <div className="main-panel">
+            {
+              routes.map((item,index) => {
+                return (
+                    <Route
+                      key={`sdfasdf ${index}`}
+                      {...item}
+                    />
+                )})
+            }
           </div>
         </Router>
-      </header>
     </div>)
   }
 }

@@ -1,7 +1,9 @@
 @import "./defindeVar.scss";
-body{
-  background-image: url(./../images/bg.png);
-}
+@import "./reset.scss";
+
+@import "./page/header.scss";
+@import "./page/appHome.scss";
+
 .page-content{
   min-height: $content-min-height;
   overflow-y: auto;

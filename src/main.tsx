@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import App from '@/pages/App';
 import store from '@/redux/store/store';
+import './assess/scss/public.scss'
 
 ReactDOM.render(
   <Provider store={store}>
