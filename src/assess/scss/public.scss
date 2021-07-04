@@ -3,9 +3,12 @@
 
 @import "./page/header.scss";
 @import "./page/appHome.scss";
+@import "./font.scss";
 
-.page-content{
-  min-height: $content-min-height;
-  overflow-y: auto;
-  margin: 0 auto;
+html{
+  height: 100%;
+}
+body{
+  background: $big-background-color;
+  min-height: 100%;
 }

@@ -8,9 +8,9 @@
  */
 import React, { ChangeEvent } from 'react';
 import { connect } from 'react-redux';
-import {  BrowserRouter as Router, Route } from 'react-router-dom';
+import {  BrowserRouter as Router, Route,Redirect } from 'react-router-dom';
 import routes from '@/router/router';
-import AppHeader from '../components/appHeader/index'
+// import AppHeader from '../components/appHeader/index'
 import { registerScroll } from '@/hook/scroll'
 
 class App extends React.Component<any, any> {
@@ -21,22 +21,29 @@ class App extends React.Component<any, any> {
     registerScroll()
   }
   render() {
-    return (<div className="App">
+    return (
         <Router>
-          <AppHeader />
-          <div className="main-panel">
+          {/*<AppHeader />*/}
             {
               routes.map((item,index) => {
-                return (
-                    <Route
-                      key={`sdfasdf ${index}`}
-                      {...item}
-                    />
-                )})
+                if(item.redirect){
+                  return (
+                      <Redirect key={`sdfasdf ${index}`}
+                        to={item.redirect}
+                      />
+                  )
+                }
+                else{
+                  return (
+                      <Route
+                        key={`sdfasdf ${index}`}
+                        {...item}
+                      />
+                  )}
+                }
+              )
             }
-          </div>
-        </Router>
-    </div>)
+        </Router>)
   }
 }
 export default connect((props) => {
