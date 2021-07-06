@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import Ani from '@/pages/appHome/components/ani';
-import NextBtn from '@/pages/appHome/components/NextBtn';
 type MainScreenState = {
     style:{
         height:string,
         width?:string
-    }
+    },
+    isLoading:boolean
 }
 
 class MainScreen extends Component<Object,MainScreenState> {
@@ -14,15 +14,20 @@ class MainScreen extends Component<Object,MainScreenState> {
         this.state = {
             style:{
                 height:'0'
-            }
+            },
+            isLoading:false
         }
     }
     componentDidMount() {
        this.setMainScreenHeight()
-
         window.onresize = () => {
             this.setMainScreenHeight()
         }
+        setTimeout(()=>{
+            this.setState({
+                isLoading:true
+            })
+        },3000)
     }
 
     setMainScreenHeight(){
@@ -36,13 +41,13 @@ class MainScreen extends Component<Object,MainScreenState> {
     }
 
     render() {
-        const { style } = this.state
+        const { style,isLoading } = this.state
+        let className = 'main-screen ' +  (isLoading?'fade-out':'')
         return (
-            <div className="main-screen"
+            <div className={className}
               style={{...style}}
             >
-                <Ani />
-                <NextBtn/>
+                <Ani/>
             </div>
         );
     }

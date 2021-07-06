@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 // import Family from '@/assess/image/Family.jpg'
+
+
 class Ani extends Component {
     render() {
+
         return (
             <div className="ani-img">
                 <svg className="loader" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
