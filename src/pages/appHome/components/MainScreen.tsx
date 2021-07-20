@@ -42,7 +42,7 @@ class MainScreen extends Component<Object,MainScreenState> {
 
     render() {
         const { style,isLoading } = this.state
-        let className = 'main-screen ' +  (isLoading?'fade-out':'')
+        let className = 'main-screen '+  (isLoading?'fade-out':'')
         return (
             <div className={className}
               style={{...style}}

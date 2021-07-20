@@ -41,38 +41,46 @@
   top: 50%;
   width: 400px;
   height: 400px;
-  transform: translate(-50%,-50%)  rotate(-90deg) ;
-  stroke-linecap: round;
-  stroke-width: 3;
-  fill: none;
-  .external-circle {
-    stroke: #fff;
-    stroke-dashoffset: 0;
-    transform-origin: center;
+  transform: translate(-50%,-50%);
+  &::after,&::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+
+  }
+  &::before {
+    border: 2px solid transparent; // We're animating border-color again
+      //transition:
+      //        border-top-color 0.15s linear, // Stagger border appearances
+      //        border-right-color 0.15s linear 0.10s,
+      //        border-bottom-color 0.15s linear 0.20s;
+  }
+  &:after{
+    border-top: 2px solid $content-bg;
   }
 
-
-  .external-circle {
-    stroke-dasharray: 312;
-    animation: external 3s linear infinite;
-    opacity: .9;
-  }
-}
-
-
-
-
-@keyframes external {
-  0% {
-    stroke-dashoffset: 312;
-    transform: rotate(0deg);
-  }
-  60% {
-    stroke-dashoffset: -312;
-  }
-  100% {
-    stroke-dashoffset: -312;
-    transform: rotate(360deg);
-  }
+  //&:hover::before {
+  //  border-top-color: $content-bg; // Show borders
+  //  border-right-color: $content-bg;
+  //  border-bottom-color: $content-bg;
+  //
+  //  transition:
+  //          border-top-color 0.15s linear, // Stagger border appearances
+  //          border-right-color 0.15s linear 0.10s,
+  //          border-bottom-color 0.15s linear 0.20s;
+  //}
+  //&:hover::after {
+  //  border-top: 2px solid $content-bg; // Shows border
+  //  border-left-width: 2px; // Solid edges, invisible borders
+  //  border-right-width: 2px; // Solid edges, invisible borders
+  //  transform: rotate(270deg); // Rotate around circle
+  //  transition:
+  //          transform 0.4s linear 0s,
+  //          border-left-width 0s linear 0.35s; // Solid edge post-rotation
+  //}
 }
 
