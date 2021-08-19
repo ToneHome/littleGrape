@@ -1,18 +1,18 @@
 import { combineReducers } from 'redux';
-const defalutState = {
+const defaultState = {
   inputValue: '你好',
   list: [],
   count: 0,
   user: ''
 }
 
-const count = (state = defalutState.count, action: any) => {
+const count = (state = defaultState.count, action: any) => {
   if (action.type === 'change_count') {
     return action.value;
   }
   return state
 }
-const inputValue = (state = defalutState.inputValue, action: any) => {
+const inputValue = (state = defaultState.inputValue, action: any) => {
   if (action.type === 'change_input') {
     return action.value;
   }

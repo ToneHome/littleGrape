@@ -1,16 +1,16 @@
 module.exports = {
   'env': {
+    'node':true,
     'browser': true,
     'commonjs': true,
     'es6': true
   },
-  'extends': 'eslint:recommended',
+  'extends': ['eslint:recommended','plugin:@typescript-eslint/recommended'],
   'globals': {
     '$': true,
     'process': true,
     '__dirname': true
   },
-  'parser': 'babel-eslint',
   'parserOptions': {
     'ecmaFeatures': {
       'experimentalObjectRestSpread': true,
@@ -89,7 +89,8 @@ module.exports = {
     'no-mixed-spaces-and-tabs': 0, //禁止混用tab和空格
     'prefer-arrow-callback': 0, //比较喜欢箭头回调
     'arrow-parens': 0, //箭头函数用小括号括起来
-    'arrow-spacing': 0 //=>的前/后括号
+    'arrow-spacing': 0, //=>的前/后括号
+    '@typescript-eslint/explicit-function-return-type': 'off'
   },
   'settings': {
     'import/ignore': [

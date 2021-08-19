@@ -53,14 +53,14 @@ export default connect((props) => {
 }, (dispatch) => {
   return {
     inputChange(event: ChangeEvent<any>) {
-      let action = {
+      const action = {
         type: 'change_input',
         value: event.target.value
       }
       dispatch(action)
     },
     countChange(event: ChangeEvent<any>) {
-      let action = {
+      const action = {
         type: 'change_count',
         value: event.target.value
       }

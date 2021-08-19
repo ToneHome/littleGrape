@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import Ani from '@/pages/appHome/components/ani';
 type MainScreenState = {
-    style:{
-        height:string,
-        width?:string
-    },
-    isLoading:boolean
+    style: {
+        height: string;
+        width?: string;
+    };
+    isLoading: boolean;
 }
 
-class MainScreen extends Component<Object,MainScreenState> {
-    constructor(props:any) {
+class MainScreen extends Component<{}, MainScreenState> {
+    constructor(props: any) {
         super(props);
         this.state = {
             style:{
@@ -31,7 +31,7 @@ class MainScreen extends Component<Object,MainScreenState> {
     }
 
     setMainScreenHeight(){
-        let height = document.documentElement.clientHeight;
+        const height = document.documentElement.clientHeight;
         console.log(height)
         this.setState({
             style:{
@@ -42,7 +42,7 @@ class MainScreen extends Component<Object,MainScreenState> {
 
     render() {
         const { style,isLoading } = this.state
-        let className = 'main-screen '+  (isLoading?'fade-out':'')
+        const className = 'main-screen '+  (isLoading?'fade-out':'')
         return (
             <div className={className}
               style={{...style}}

@@ -14,6 +14,31 @@
     height: 100px;
     width: 100%;
     border-bottom: 1px solid #666;
+    position: relative;
+    .operator{
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+        font-size: 18px;
+    }
+    .leftNumber{
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        width: 100%;
+        padding-right: 20px;
+        font-size: 24px;
+        text-align: right;
+    }
+    .rightNumber{
+        position: absolute;
+        top: 10px;
+        width: 100%;
+        padding-right: 20px;
+        left: 0;
+        font-size: 20px;
+        text-align: right;
+    }
 }
 
 .ctrl-panel{
@@ -29,8 +54,8 @@
         line-height: 100px;
         text-align: center;
         user-select: none;
-        cursor: default;
         font-size: 30px;
+        cursor: pointer;
         &:nth-child(4n){
             border-right: none;
         }
@@ -38,7 +63,7 @@
         // &:nth-child(n+13){
         //     border-bottom: none;
         // }
-        &:hover{
+        &.active{
             background: #666;
             color: #fff;
         }
